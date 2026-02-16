@@ -1,33 +1,39 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const CTASection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-24 bg-gradient-navy text-primary-foreground relative overflow-hidden">
-      {/* Decorative elements */}
+    <section className="py-24 bg-gradient-navy text-primary-foreground relative overflow-hidden" ref={ref}>
       <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className={`max-w-3xl mx-auto text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-            Ready to Transform Your{" "}
-            <span className="text-gradient-gold">Real Estate Business?</span>
+            Ready to Find Your{" "}
+            <span className="text-gradient-gold">Next Property?</span>
           </h2>
           <p className="text-primary-foreground/60 font-sans text-lg mb-10 max-w-xl mx-auto">
-            Join 120+ Abuja property professionals already growing their business 
-            with our platform. Let's build your online presence together.
+            Join thousands of satisfied clients who found their perfect home through 
+            AbujaRealty. Start browsing today — it's completely free.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="gold" size="lg" className="group">
-              Start Your Free Trial
-              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="outline-hero" size="lg">
-              <Phone className="mr-2 w-4 h-4" />
-              Schedule a Demo
-            </Button>
+            <Link to="/listings">
+              <Button variant="gold" size="lg" className="group">
+                Browse All Properties
+                <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+            <a href="#contact">
+              <Button variant="outline-hero" size="lg">
+                Talk to an Expert
+              </Button>
+            </a>
           </div>
         </div>
       </div>
