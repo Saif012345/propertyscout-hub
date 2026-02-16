@@ -1,4 +1,5 @@
 import { Building2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -11,24 +12,24 @@ const Footer = () => {
               <span className="text-lg font-display font-bold text-primary-foreground">AbujaRealty</span>
             </div>
             <p className="text-sm font-sans leading-relaxed">
-              Abuja's premier real estate technology platform, connecting property 
-              professionals with modern solutions.
+              Abuja's leading online real estate platform. Find, rent, or buy 
+              your dream property with confidence.
             </p>
           </div>
 
           {[
-            { title: "Platform", links: ["Property Search", "Virtual Tours", "Lead CRM", "Analytics"] },
-            { title: "Partners", links: ["Realtors", "Developers", "Estate Managers", "Vacation Rentals"] },
-            { title: "Company", links: ["About Us", "Careers", "Blog", "Contact"] },
+            { title: "Properties", links: [{ label: "All Listings", href: "/listings" }, { label: "For Sale", href: "/listings" }, { label: "For Rent", href: "/listings" }, { label: "New Developments", href: "/listings" }] },
+            { title: "Explore", links: [{ label: "Maitama", href: "#" }, { label: "Asokoro", href: "#" }, { label: "Wuse II", href: "#" }, { label: "Gwarinpa", href: "#" }] },
+            { title: "Company", links: [{ label: "About Us", href: "#" }, { label: "Careers", href: "#" }, { label: "Blog", href: "#" }, { label: "Contact", href: "#contact" }] },
           ].map((col) => (
             <div key={col.title}>
               <h4 className="font-sans font-semibold text-primary-foreground text-sm mb-4">{col.title}</h4>
               <ul className="space-y-2">
                 {col.links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-sm font-sans hover:text-gold transition-colors">
-                      {link}
-                    </a>
+                  <li key={link.label}>
+                    <Link to={link.href} className="text-sm font-sans hover:text-gold transition-colors">
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
