@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
+    --background: 40 30% 98%;
     --foreground: 220 30% 12%;
 
     --card: 0 0% 100%;
@@ -16,7 +16,7 @@
     --popover-foreground: 220 30% 12%;
 
     --primary: 220 45% 16%;
-    --primary-foreground: 40 60% 95%;
+    --primary-foreground: 40 30% 97%;
 
     --secondary: 215 25% 92%;
     --secondary-foreground: 220 30% 12%;
@@ -24,21 +24,21 @@
     --muted: 215 20% 94%;
     --muted-foreground: 215 15% 48%;
 
-    --accent: 40 75% 55%;
-    --accent-foreground: 220 45% 12%;
+    --accent: 158 64% 38%;
+    --accent-foreground: 40 30% 97%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 215 20% 90%;
     --input: 215 20% 90%;
-    --ring: 40 75% 55%;
+    --ring: 158 64% 38%;
 
     --radius: 0.625rem;
 
-    --gold: 40 75% 55%;
-    --gold-light: 40 80% 72%;
-    --gold-dark: 38 70% 42%;
+    --gold: 158 64% 38%;
+    --gold-light: 158 55% 52%;
+    --gold-dark: 162 70% 24%;
     --navy: 220 45% 16%;
     --navy-light: 218 35% 28%;
     --navy-dark: 222 50% 10%;
@@ -54,33 +54,40 @@
   }
 
   .dark {
-    --background: 222 50% 6%;
-    --foreground: 210 40% 95%;
+    --background: 222 47% 7%;
+    --foreground: 158 20% 95%;
 
-    --card: 220 45% 10%;
-    --card-foreground: 210 40% 95%;
+    --card: 220 40% 11%;
+    --card-foreground: 158 20% 95%;
 
-    --popover: 220 45% 10%;
-    --popover-foreground: 210 40% 95%;
+    --popover: 220 40% 11%;
+    --popover-foreground: 158 20% 95%;
 
-    --primary: 40 75% 55%;
-    --primary-foreground: 220 45% 10%;
+    --primary: 158 55% 52%;
+    --primary-foreground: 222 47% 7%;
 
-    --secondary: 218 35% 18%;
-    --secondary-foreground: 210 40% 95%;
+    --secondary: 218 30% 16%;
+    --secondary-foreground: 158 20% 95%;
 
-    --muted: 218 30% 16%;
-    --muted-foreground: 215 20% 60%;
+    --muted: 218 25% 14%;
+    --muted-foreground: 215 15% 65%;
 
-    --accent: 40 75% 55%;
-    --accent-foreground: 220 45% 10%;
+    --accent: 158 55% 52%;
+    --accent-foreground: 222 47% 7%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 218 30% 18%;
-    --input: 218 30% 18%;
-    --ring: 40 75% 55%;
+    --border: 218 25% 18%;
+    --input: 218 25% 18%;
+    --ring: 158 55% 52%;
+
+    --gold: 158 55% 52%;
+    --gold-light: 158 60% 65%;
+    --gold-dark: 162 70% 32%;
+    --navy: 220 45% 16%;
+    --navy-light: 218 35% 28%;
+    --navy-dark: 222 50% 6%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -110,15 +117,15 @@
 @layer utilities {
   .text-gradient-gold {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(40 80% 72%), hsl(40 75% 55%), hsl(38 70% 42%));
+    background-image: linear-gradient(135deg, hsl(var(--gold-light)), hsl(var(--gold)), hsl(var(--gold-dark)));
   }
 
   .bg-gradient-navy {
-    background: linear-gradient(180deg, hsl(222 50% 10%) 0%, hsl(220 45% 16%) 50%, hsl(218 35% 28%) 100%);
+    background: linear-gradient(180deg, hsl(var(--navy-dark)) 0%, hsl(var(--navy)) 50%, hsl(var(--navy-light)) 100%);
   }
 
   .bg-gradient-gold {
-    background: linear-gradient(135deg, hsl(40 75% 55%), hsl(38 70% 42%));
+    background: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-dark)));
   }
 
   .glass-card {

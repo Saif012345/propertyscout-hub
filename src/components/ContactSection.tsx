@@ -73,9 +73,9 @@ const ContactSection = () => {
 
             <div className="space-y-6">
               {[
-                { icon: Phone, label: "Call Us", value: "+234 901 234 5678" },
-                { icon: Mail, label: "Email Us", value: "hello@abujarealty.com" },
-                { icon: MapPin, label: "Visit Us", value: "Plot 123, Wuse II, Abuja, FCT" },
+                { icon: Phone, label: "Call Us", value: "+234 087 711 8036" },
+                { icon: Mail, label: "Email Us", value: "ozoaze@gmail.com" },
+                { icon: MapPin, label: "Visit Us", value: "No. 4, 4th Avenue, Gwarinpa Estate, Abuja FCT" },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center flex-shrink-0">

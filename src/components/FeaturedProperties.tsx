@@ -55,7 +55,7 @@ const FeaturedProperties = () => {
               Handpicked <span className="text-gradient-gold">Properties</span>
             </h2>
           </div>
-          <Link to="/listings">
+          <Link to="/properties">
             <Button variant="outline" size="lg">
               View All Listings
             </Button>
