@@ -15,6 +15,7 @@ import Auth from "./pages/Auth";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminLeads from "./pages/admin/AdminLeads";
 import AdminProperties from "./pages/admin/AdminProperties";
+import AdminSettings from "./pages/admin/AdminSettings";
 import RequireAdmin from "./components/RequireAdmin";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/admin" element={<RequireAdmin><AdminDashboard /></RequireAdmin>} />
             <Route path="/admin/leads" element={<RequireAdmin><AdminLeads /></RequireAdmin>} />
             <Route path="/admin/properties" element={<RequireAdmin><AdminProperties /></RequireAdmin>} />
+            <Route path="/admin/settings" element={<RequireAdmin><AdminSettings /></RequireAdmin>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
