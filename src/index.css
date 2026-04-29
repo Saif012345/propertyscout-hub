@@ -43,6 +43,9 @@
     --navy-light: 218 35% 28%;
     --navy-dark: 222 50% 10%;
 
+    /* Always-light text for use over dark navy/hero backgrounds in BOTH themes */
+    --on-dark: 40 30% 97%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -89,6 +92,8 @@
     --navy-light: 218 35% 28%;
     --navy-dark: 222 50% 6%;
 
+    --on-dark: 40 30% 97%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -131,4 +136,15 @@
   .glass-card {
     @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-lg;
   }
+
+  .text-on-dark { color: hsl(var(--on-dark)); }
+  .text-on-dark\/90 { color: hsl(var(--on-dark) / 0.9); }
+  .text-on-dark\/70 { color: hsl(var(--on-dark) / 0.7); }
+  .text-on-dark\/60 { color: hsl(var(--on-dark) / 0.6); }
+  .text-on-dark\/50 { color: hsl(var(--on-dark) / 0.5); }
+  .text-on-dark\/40 { color: hsl(var(--on-dark) / 0.4); }
+  .border-on-dark\/10 { border-color: hsl(var(--on-dark) / 0.1); }
+  .border-on-dark\/20 { border-color: hsl(var(--on-dark) / 0.2); }
+  .bg-on-dark\/5 { background-color: hsl(var(--on-dark) / 0.05); }
+  .bg-on-dark\/10 { background-color: hsl(var(--on-dark) / 0.1); }
 }
