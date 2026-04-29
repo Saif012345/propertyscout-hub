@@ -2,13 +2,15 @@ import { ReactNode } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { Building2, LayoutDashboard, Inbox, Home, LogOut, Globe } from "lucide-react";
+import { LayoutDashboard, Inbox, Home, LogOut, Globe, Plus, Settings } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const items = [
   { to: "/admin", label: "Overview", icon: LayoutDashboard, end: true },
-  { to: "/admin/leads", label: "Leads", icon: Inbox },
   { to: "/admin/properties", label: "Properties", icon: Home },
+  { to: "/admin/properties?new=1", label: "Add Property", icon: Plus },
+  { to: "/admin/leads", label: "Messages", icon: Inbox },
+  { to: "/admin/settings", label: "Settings", icon: Settings },
 ];
 
 const AdminLayout = ({ children }: { children: ReactNode }) => {
@@ -26,7 +28,7 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
       <aside className="w-full md:w-64 md:min-h-screen bg-card border-r border-border md:fixed md:left-0 md:top-0 md:bottom-0 flex flex-col">
         <div className="p-6 border-b border-border flex items-center justify-between md:block">
           <Link to="/" className="flex items-center gap-2">
-            <Building2 className="w-5 h-5 text-accent" />
+            <img src="/logo.png" alt="UNOOMA" className="w-6 h-6 object-contain" width={24} height={24} />
             <span className="font-display font-bold">UNOOMA Admin</span>
           </Link>
         </div>

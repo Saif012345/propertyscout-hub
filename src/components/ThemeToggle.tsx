@@ -9,7 +9,7 @@ const ThemeToggle = ({ className = "" }: { className?: string }) => {
       aria-label="Toggle theme"
       className={`w-9 h-9 rounded-full flex items-center justify-center border border-on-dark/20 text-on-dark/80 hover:text-accent hover:border-accent/40 transition-colors ${className}`}
     >
-      {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+      {theme === "dark" ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
     </button>
   );
 };

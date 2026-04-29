@@ -143,7 +143,7 @@ const Listings = () => {
   const [dbProps, setDbProps] = useState<any[]>([]);
 
   useEffect(() => {
-    supabase.from("properties").select("*").eq("status", "published").order("created_at", { ascending: false })
+    supabase.from("properties").select("*").neq("status", "draft").order("created_at", { ascending: false })
       .then(({ data }) => setDbProps(data || []));
   }, []);
 

@@ -1,24 +1,44 @@
-import { Building2, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 const Footer = () => {
+  const { settings } = useSiteSettings();
+  const socials = [
+    { url: settings.facebook_url, Icon: Facebook, label: "Facebook" },
+    { url: settings.instagram_url, Icon: Instagram, label: "Instagram" },
+    { url: settings.twitter_url, Icon: Twitter, label: "Twitter" },
+    { url: settings.linkedin_url, Icon: Linkedin, label: "LinkedIn" },
+    { url: settings.whatsapp_url, Icon: MessageCircle, label: "WhatsApp" },
+  ].filter((s) => s.url && s.url.trim().length > 0);
+
   return (
     <footer className="bg-navy-dark text-on-dark/60 py-16">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Building2 className="w-5 h-5 text-accent" />
+              <img src="/logo.png" alt="UNOOMA Properties logo" className="w-7 h-7 object-contain" width={28} height={28} loading="lazy" />
               <span className="text-lg font-display font-bold text-on-dark">UNOOMA PROPERTIES</span>
             </div>
             <p className="text-sm font-sans leading-relaxed mb-5">
               Property management, consultancy and development across Abuja FCT. Trusted partners in your real estate journey.
             </p>
             <ul className="space-y-2.5 text-sm font-sans">
-              <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 text-accent flex-shrink-0" /> No. 4, 4th Avenue, Gwarinpa Estate, Abuja FCT</li>
-              <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-accent flex-shrink-0" /> +234 087 711 8036</li>
-              <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-accent flex-shrink-0" /> ozoaze@gmail.com</li>
+              <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 text-accent flex-shrink-0" /> {settings.address}</li>
+              <li className="flex items-center gap-2"><Phone className="w-4 h-4 text-accent flex-shrink-0" /> <a href={`tel:${settings.phone.replace(/\s+/g, "")}`} className="hover:text-accent">{settings.phone}</a></li>
+              <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-accent flex-shrink-0" /> <a href={`mailto:${settings.email}`} className="hover:text-accent">{settings.email}</a></li>
             </ul>
+            {socials.length > 0 && (
+              <div className="flex items-center gap-3 mt-5">
+                {socials.map(({ url, Icon, label }) => (
+                  <a key={label} href={url} target="_blank" rel="noopener noreferrer" aria-label={label}
+                     className="w-9 h-9 rounded-full border border-on-dark/15 flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {[
