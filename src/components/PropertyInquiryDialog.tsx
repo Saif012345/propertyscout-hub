@@ -32,11 +32,14 @@ const PropertyInquiryDialog = ({ propertyId, propertyTitle, trigger }: Props) =>
     }
     setBusy(true);
     const { error } = await supabase.from("leads").insert({
-      ...parsed.data,
+      name: parsed.data.name,
+      email: parsed.data.email,
+      phone: parsed.data.phone,
+      message: parsed.data.message,
       source: "property",
       property_id: propertyId || null,
       property_title: propertyTitle,
-    });
+    } as any);
     setBusy(false);
     if (error) {
       toast({ title: "Failed to send", description: error.message, variant: "destructive" });
