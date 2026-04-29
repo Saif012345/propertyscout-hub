@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import AdminLayout from "@/components/AdminLayout";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -8,17 +9,27 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Switch } from "@/components/ui/switch";
 import { useToast } from "@/hooks/use-toast";
-import { Plus, Pencil, Trash2, Star } from "lucide-react";
+import { Plus, Pencil, Trash2, Star, Upload, Loader2 } from "lucide-react";
 
 const empty = {
   id: "", title: "", description: "", location: "", price: 0, price_label: "",
   beds: 0, baths: 0, sqm: 0, type: "sale", category: "house",
-  image_url: "", status: "published", featured: false,
+  image_url: "", status: "available", featured: false,
+};
+
+const STATUS_BADGE: Record<string, string> = {
+  available: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300",
+  sold: "bg-red-500/15 text-red-700 dark:text-red-300",
+  rented: "bg-blue-500/15 text-blue-700 dark:text-blue-300",
+  draft: "bg-muted text-muted-foreground",
 };
 
 const AdminProperties = () => {
   const [items, setItems] = useState<any[]>([]);
   const [editing, setEditing] = useState<any | null>(null);
+  const [uploading, setUploading] = useState(false);
+  const fileRef = useRef<HTMLInputElement>(null);
+  const [searchParams, setSearchParams] = useSearchParams();
   const { toast } = useToast();
 
   const load = async () => {
@@ -26,6 +37,36 @@ const AdminProperties = () => {
     setItems(data || []);
   };
   useEffect(() => { load(); }, []);
+
+  useEffect(() => {
+    if (searchParams.get("new") === "1") {
+      setEditing({ ...empty });
+      searchParams.delete("new");
+      setSearchParams(searchParams, { replace: true });
+    }
+  }, [searchParams, setSearchParams]);
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) {
+      toast({ title: "Image too large", description: "Max 5MB", variant: "destructive" });
+      return;
+    }
+    setUploading(true);
+    const ext = file.name.split(".").pop() || "jpg";
+    const path = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+    const { error } = await supabase.storage.from("property-images").upload(path, file, { upsert: false });
+    if (error) {
+      toast({ title: "Upload failed", description: error.message, variant: "destructive" });
+    } else {
+      const { data: pub } = supabase.storage.from("property-images").getPublicUrl(path);
+      setEditing((prev: any) => ({ ...prev, image_url: pub.publicUrl }));
+      toast({ title: "Image uploaded" });
+    }
+    setUploading(false);
+    if (fileRef.current) fileRef.current.value = "";
+  };
 
   const save = async () => {
     if (!editing.title || !editing.location || !editing.price_label) {
@@ -69,6 +110,7 @@ const AdminProperties = () => {
             <div className="h-40 bg-muted relative">
               {p.image_url && <img src={p.image_url} alt={p.title} className="w-full h-full object-cover" />}
               {p.featured && <span className="absolute top-2 left-2 bg-yellow-500 text-white text-xs px-2 py-0.5 rounded-full flex items-center gap-1"><Star className="w-3 h-3" /> Featured</span>}
+              <span className={`absolute top-2 right-2 text-xs font-sans px-2 py-0.5 rounded-full capitalize ${STATUS_BADGE[p.status] || STATUS_BADGE.draft}`}>{p.status}</span>
             </div>
             <div className="p-4">
               <div className="text-xs text-muted-foreground font-sans uppercase">{p.type} · {p.category}</div>
@@ -96,9 +138,30 @@ const AdminProperties = () => {
             <div className="space-y-3">
               <Input placeholder="Title" value={editing.title} onChange={(e) => setEditing({ ...editing, title: e.target.value })} />
               <Textarea placeholder="Description" value={editing.description || ""} onChange={(e) => setEditing({ ...editing, description: e.target.value })} />
+
+              {/* Image upload */}
+              <div className="space-y-2">
+                <label className="text-sm font-sans font-medium">Property image</label>
+                {editing.image_url && (
+                  <img src={editing.image_url} alt="Preview" className="w-full h-40 object-cover rounded-md border border-border" />
+                )}
+                <div className="flex gap-2">
+                  <input ref={fileRef} type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
+                  <Button type="button" variant="outline" size="sm" onClick={() => fileRef.current?.click()} disabled={uploading}>
+                    {uploading ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Upload className="w-4 h-4 mr-1.5" />}
+                    {uploading ? "Uploading…" : editing.image_url ? "Replace image" : "Upload image"}
+                  </Button>
+                  {editing.image_url && (
+                    <Button type="button" variant="outline" size="sm" onClick={() => setEditing({ ...editing, image_url: "" })}>
+                      Remove
+                    </Button>
+                  )}
+                </div>
+                <Input placeholder="…or paste image URL" value={editing.image_url || ""} onChange={(e) => setEditing({ ...editing, image_url: e.target.value })} />
+              </div>
+
               <div className="grid grid-cols-2 gap-3">
                 <Input placeholder="Location (e.g. Maitama)" value={editing.location} onChange={(e) => setEditing({ ...editing, location: e.target.value })} />
-                <Input placeholder="Image URL" value={editing.image_url || ""} onChange={(e) => setEditing({ ...editing, image_url: e.target.value })} />
                 <Input type="number" placeholder="Price (number)" value={editing.price} onChange={(e) => setEditing({ ...editing, price: Number(e.target.value) })} />
                 <Input placeholder="Price label (₦185,000,000)" value={editing.price_label} onChange={(e) => setEditing({ ...editing, price_label: e.target.value })} />
                 <Input type="number" placeholder="Beds" value={editing.beds} onChange={(e) => setEditing({ ...editing, beds: Number(e.target.value) })} />
@@ -121,9 +184,11 @@ const AdminProperties = () => {
                   </SelectContent>
                 </Select>
                 <Select value={editing.status} onValueChange={(v) => setEditing({ ...editing, status: v })}>
-                  <SelectTrigger><SelectValue /></SelectTrigger>
+                  <SelectTrigger><SelectValue placeholder="Status" /></SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="published">Published</SelectItem>
+                    <SelectItem value="available">Available</SelectItem>
+                    <SelectItem value="sold">Sold</SelectItem>
+                    <SelectItem value="rented">Rented</SelectItem>
                     <SelectItem value="draft">Draft</SelectItem>
                   </SelectContent>
                 </Select>
