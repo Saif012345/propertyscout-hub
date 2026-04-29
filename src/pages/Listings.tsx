@@ -5,6 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PropertyInquiryDialog from "@/components/PropertyInquiryDialog";
+import { useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 import property1 from "@/assets/property-1.jpg";
 import property2 from "@/assets/property-2.jpg";
@@ -138,18 +141,40 @@ const Listings = () => {
   const [typeFilter, setTypeFilter] = useState("all");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [locationFilter, setLocationFilter] = useState("all");
+  const [dbProps, setDbProps] = useState<any[]>([]);
+
+  useEffect(() => {
+    supabase.from("properties").select("*").eq("status", "published").order("created_at", { ascending: false })
+      .then(({ data }) => setDbProps(data || []));
+  }, []);
+
+  const sourceList = dbProps.length > 0
+    ? dbProps.map((p) => ({
+        id: p.id,
+        image: p.image_url || property1,
+        title: p.title,
+        location: p.location,
+        price: p.price,
+        priceLabel: p.price_label,
+        beds: p.beds,
+        baths: p.baths,
+        sqm: p.sqm,
+        type: p.type,
+        category: p.category,
+      }))
+    : allProperties;
 
   const filtered = useMemo(() => {
-    return allProperties.filter((p) => {
+    return sourceList.filter((p: any) => {
       const matchSearch = p.title.toLowerCase().includes(search.toLowerCase()) || p.location.toLowerCase().includes(search.toLowerCase());
       const matchType = typeFilter === "all" || p.type === typeFilter;
       const matchCategory = categoryFilter === "all" || p.category === categoryFilter;
       const matchLocation = locationFilter === "all" || p.location === locationFilter;
       return matchSearch && matchType && matchCategory && matchLocation;
     });
-  }, [search, typeFilter, categoryFilter, locationFilter]);
+  }, [search, typeFilter, categoryFilter, locationFilter, sourceList]);
 
-  const locations = [...new Set(allProperties.map((p) => p.location))];
+  const locations = [...new Set(sourceList.map((p: any) => p.location))];
 
   return (
     <div className="min-h-screen bg-background">
@@ -162,7 +187,7 @@ const Listings = () => {
             Property <span className="text-gradient-gold">Listings</span>
           </h1>
           <p className="text-primary-foreground/60 font-sans text-lg">
-            Browse {allProperties.length} properties across Abuja
+            Browse {sourceList.length} properties across Abuja
           </p>
         </div>
       </div>
@@ -221,7 +246,7 @@ const Listings = () => {
         <div className="flex items-center justify-between mb-6">
           <p className="text-sm font-sans text-muted-foreground flex items-center gap-2">
             <SlidersHorizontal className="w-4 h-4" />
-            Showing {filtered.length} of {allProperties.length} properties
+            Showing {filtered.length} of {sourceList.length} properties
           </p>
         </div>
 
@@ -234,7 +259,7 @@ const Listings = () => {
             </Button>
           </div>
         ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {filtered.map((property) => (
               <div
                 key={property.id}
@@ -258,20 +283,24 @@ const Listings = () => {
                     </span>
                   </div>
                 </div>
-                <div className="p-6">
-                  <div className="text-2xl font-display font-bold text-gold mb-1">{property.priceLabel}</div>
+                <div className="p-5 md:p-6">
+                  <div className="text-xl md:text-2xl font-display font-bold text-gold mb-1 break-words">{property.priceLabel}</div>
                   <h3 className="text-lg font-display font-semibold text-foreground mb-2">{property.title}</h3>
                   <div className="flex items-center gap-1 text-muted-foreground text-sm font-sans mb-4">
                     <MapPin className="w-4 h-4" />
                     {property.location}, Abuja
                   </div>
-                  <div className="flex items-center gap-4 text-sm font-sans text-muted-foreground border-t border-border pt-4">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-sans text-muted-foreground border-t border-border pt-4 mb-4">
                     {property.beds > 0 && (
                       <span className="flex items-center gap-1"><Bed className="w-4 h-4" /> {property.beds} Beds</span>
                     )}
                     <span className="flex items-center gap-1"><Bath className="w-4 h-4" /> {property.baths} Baths</span>
                     <span className="flex items-center gap-1"><Maximize className="w-4 h-4" /> {property.sqm} sqm</span>
                   </div>
+                  <PropertyInquiryDialog
+                    propertyId={typeof property.id === "string" ? property.id : undefined}
+                    propertyTitle={property.title}
+                  />
                 </div>
               </div>
             ))}
