@@ -28,13 +28,13 @@ const WhyUs = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="pt-28 pb-16 bg-gradient-navy text-primary-foreground">
+      <section className="pt-28 pb-16 bg-gradient-navy text-on-dark">
         <div className="container mx-auto px-6">
           <span className="text-accent font-sans text-sm font-semibold tracking-widest uppercase">Why Choose Us</span>
           <h1 className="text-4xl md:text-6xl font-display font-bold mt-4 mb-6 max-w-3xl">
             The <span className="text-gradient-gold">UNOOMA</span> difference
           </h1>
-          <p className="text-primary-foreground/70 font-sans text-lg max-w-2xl">
+          <p className="text-on-dark/70 font-sans text-lg max-w-2xl">
             We combine integrity, market expertise and modern service standards to give 
             you a real estate experience built on trust.
           </p>
@@ -61,13 +61,13 @@ const WhyUs = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-navy text-primary-foreground">
+      <section className="py-20 bg-gradient-navy text-on-dark">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
                 <div className="text-4xl md:text-5xl font-display font-bold text-accent mb-2">{s.value}</div>
-                <div className="text-sm font-sans text-primary-foreground/60 uppercase tracking-wider">{s.label}</div>
+                <div className="text-sm font-sans text-on-dark/60 uppercase tracking-wider">{s.label}</div>
               </div>
             ))}
           </div>

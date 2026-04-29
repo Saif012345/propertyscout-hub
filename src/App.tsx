@@ -10,6 +10,12 @@ import WhyUs from "./pages/WhyUs";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./components/ThemeProvider";
+import { AuthProvider } from "./hooks/useAuth";
+import Auth from "./pages/Auth";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminLeads from "./pages/admin/AdminLeads";
+import AdminProperties from "./pages/admin/AdminProperties";
+import RequireAdmin from "./components/RequireAdmin";
 
 const queryClient = new QueryClient();
 
@@ -20,15 +26,21 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/properties" element={<Listings />} />
-          <Route path="/listings" element={<Listings />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/why-us" element={<WhyUs />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/properties" element={<Listings />} />
+            <Route path="/listings" element={<Listings />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/why-us" element={<WhyUs />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/admin" element={<RequireAdmin><AdminDashboard /></RequireAdmin>} />
+            <Route path="/admin/leads" element={<RequireAdmin><AdminLeads /></RequireAdmin>} />
+            <Route path="/admin/properties" element={<RequireAdmin><AdminProperties /></RequireAdmin>} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
     </ThemeProvider>

@@ -38,7 +38,7 @@ const FeaturesSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-24 bg-gradient-navy text-primary-foreground" ref={ref}>
+    <section className="py-24 bg-gradient-navy text-on-dark" ref={ref}>
       <div className="container mx-auto px-6">
         <div className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="text-gold font-sans text-sm font-semibold tracking-widest uppercase">
@@ -48,7 +48,7 @@ const FeaturesSection = () => {
             Everything You Need to{" "}
             <span className="text-gradient-gold">Find Home</span>
           </h2>
-          <p className="text-primary-foreground/60 font-sans text-lg">
+          <p className="text-on-dark/60 font-sans text-lg">
             A complete property platform built for Abuja's real estate market.
           </p>
         </div>
@@ -57,14 +57,14 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className={`p-8 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5 hover:bg-primary-foreground/10 transition-all duration-500 group ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`p-8 rounded-lg border border-on-dark/10 bg-on-dark/5 hover:bg-on-dark/10 transition-all duration-500 group ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${index * 100 + 200}ms` }}
             >
               <div className="w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center mb-5 group-hover:bg-gold/30 transition-colors">
                 <feature.icon className="w-6 h-6 text-gold" />
               </div>
               <h3 className="text-xl font-display font-semibold mb-3">{feature.title}</h3>
-              <p className="text-primary-foreground/60 font-sans text-sm leading-relaxed">
+              <p className="text-on-dark/60 font-sans text-sm leading-relaxed">
                 {feature.description}
               </p>
             </div>

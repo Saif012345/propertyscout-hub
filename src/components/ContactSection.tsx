@@ -6,6 +6,7 @@ import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be under 100 characters"),
@@ -34,7 +35,7 @@ const ContactSection = () => {
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = contactSchema.safeParse(formData);
     if (!result.success) {
@@ -47,10 +48,19 @@ const ContactSection = () => {
       return;
     }
     setErrors({});
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
+    const { error } = await supabase.from("leads").insert({
+      name: result.data.name,
+      email: result.data.email,
+      phone: result.data.phone,
+      company: result.data.company || null,
+      message: result.data.message,
+      source: "contact",
     });
+    if (error) {
+      toast({ title: "Failed to send", description: error.message, variant: "destructive" });
+      return;
+    }
+    toast({ title: "Message Sent!", description: "We'll get back to you within 24 hours." });
     setFormData({ name: "", email: "", phone: "", company: "", message: "" });
   };
 

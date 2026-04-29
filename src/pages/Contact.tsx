@@ -8,13 +8,13 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="pt-28 pb-16 bg-gradient-navy text-primary-foreground">
+      <section className="pt-28 pb-16 bg-gradient-navy text-on-dark">
         <div className="container mx-auto px-6">
           <span className="text-accent font-sans text-sm font-semibold tracking-widest uppercase">Contact Us</span>
           <h1 className="text-4xl md:text-6xl font-display font-bold mt-4 mb-6 max-w-3xl">
             Let's talk about your <span className="text-gradient-gold">property needs</span>
           </h1>
-          <p className="text-primary-foreground/70 font-sans text-lg max-w-2xl">
+          <p className="text-on-dark/70 font-sans text-lg max-w-2xl">
             Reach out to UNOOMA Properties Ltd — our team in Gwarinpa is ready to help 
             with management, consultancy or development enquiries.
           </p>

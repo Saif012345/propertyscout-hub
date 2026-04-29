@@ -18,7 +18,7 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="relative pt-28 pb-20 bg-gradient-navy text-primary-foreground overflow-hidden">
+      <section className="relative pt-28 pb-20 bg-gradient-navy text-on-dark overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img src={heroBg} alt="Abuja skyline" className="w-full h-full object-cover" />
         </div>
@@ -27,7 +27,7 @@ const About = () => {
           <h1 className="text-4xl md:text-6xl font-display font-bold mt-4 mb-6 max-w-3xl">
             Building Abuja's Future, <span className="text-gradient-gold">One Property at a Time</span>
           </h1>
-          <p className="text-primary-foreground/70 font-sans text-lg max-w-2xl">
+          <p className="text-on-dark/70 font-sans text-lg max-w-2xl">
             UNOOMA Properties Ltd is a full-service real estate company headquartered in 
             Gwarinpa Estate, Abuja FCT, providing property management, consultancy and 
             development services to discerning clients across Nigeria.
