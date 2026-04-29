@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
+import { useAuth } from "@/hooks/useAuth";
+import { LayoutDashboard } from "lucide-react";
 
 const navItems = [
   { label: "Home", to: "/" },
@@ -14,6 +16,7 @@ const navItems = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { isAdmin } = useAuth();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navy-dark/80 backdrop-blur-lg border-b border-on-dark/10">
@@ -39,6 +42,11 @@ const Navbar = () => {
             </NavLink>
           ))}
           <ThemeToggle />
+          {isAdmin && (
+            <Link to="/admin" className="text-sm text-accent hover:text-accent/80 inline-flex items-center gap-1">
+              <LayoutDashboard className="w-4 h-4" /> Admin
+            </Link>
+          )}
           <Link to="/properties">
             <Button variant="gold" size="sm">
               Browse Properties
