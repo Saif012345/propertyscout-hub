@@ -180,12 +180,12 @@ const Listings = () => {
       <Navbar />
 
       {/* Header */}
-      <div className="bg-gradient-navy text-primary-foreground pt-28 pb-12">
+      <div className="bg-gradient-navy text-on-dark pt-28 pb-12">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl md:text-5xl font-display font-bold mb-3">
             Property <span className="text-gradient-gold">Listings</span>
           </h1>
-          <p className="text-primary-foreground/60 font-sans text-lg">
+          <p className="text-on-dark/60 font-sans text-lg">
             Browse {sourceList.length} properties across Abuja
           </p>
         </div>
@@ -277,7 +277,7 @@ const Listings = () => {
                     </span>
                   </div>
                   <div className="absolute top-4 right-4">
-                    <span className="bg-primary/80 backdrop-blur-sm text-primary-foreground text-xs font-sans font-medium px-3 py-1 rounded-full capitalize">
+                    <span className="bg-primary/80 backdrop-blur-sm text-on-dark text-xs font-sans font-medium px-3 py-1 rounded-full capitalize">
                       {property.category}
                     </span>
                   </div>

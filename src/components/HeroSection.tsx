@@ -21,13 +21,13 @@ const HeroSection = () => {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-on-dark leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             Property Made{" "}
             <span className="text-gradient-gold">Effortless</span>{" "}
             in Abuja
           </h1>
 
-          <p className="text-lg md:text-xl text-primary-foreground/70 font-sans leading-relaxed mb-10 max-w-2xl animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          <p className="text-lg md:text-xl text-on-dark/70 font-sans leading-relaxed mb-10 max-w-2xl animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
             UNOOMA Properties Ltd offers expert property management, consultancy, and 
             development services across the FCT. Find, lease, or develop with confidence.
           </p>
@@ -47,7 +47,7 @@ const HeroSection = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-primary-foreground/10 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
+          <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-on-dark/10 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
             {[
               { value: "500+", label: "Properties Managed" },
               { value: "1,200+", label: "Satisfied Clients" },
@@ -55,7 +55,7 @@ const HeroSection = () => {
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-3xl md:text-4xl font-display font-bold text-accent">{stat.value}</div>
-                <div className="text-sm text-primary-foreground/50 font-sans mt-1">{stat.label}</div>
+                <div className="text-sm text-on-dark/50 font-sans mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
