@@ -8,11 +8,11 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={heroBg} alt="Luxury real estate in Abuja" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-navy opacity-80" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-transparent to-navy-dark/40" />
+        <div className="absolute inset-0 bg-navy-dark/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/85 via-navy-dark/30 to-navy-dark/40" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 py-32">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-24 sm:py-32">
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
             <Building2 className="w-5 h-5 text-accent" />
@@ -21,7 +21,7 @@ const HeroSection = () => {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-on-dark leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-on-dark leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             Property Made{" "}
             <span className="text-gradient-gold">Effortless</span>{" "}
             in Abuja
@@ -47,15 +47,15 @@ const HeroSection = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-on-dark/10 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
+          <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-12 sm:mt-16 pt-8 border-t border-on-dark/10 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
             {[
               { value: "500+", label: "Properties Managed" },
               { value: "1,200+", label: "Satisfied Clients" },
               { value: "15+", label: "Years in Abuja" },
             ].map((stat) => (
               <div key={stat.label}>
-                <div className="text-3xl md:text-4xl font-display font-bold text-accent">{stat.value}</div>
-                <div className="text-sm text-on-dark/50 font-sans mt-1">{stat.label}</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-accent">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-on-dark/60 font-sans mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
