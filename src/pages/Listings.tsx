@@ -6,7 +6,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PropertyInquiryDialog from "@/components/PropertyInquiryDialog";
-import { useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 
 import property1 from "@/assets/property-1.jpg";
