@@ -83,8 +83,8 @@ const ContactSection = () => {
 
             <div className="space-y-6">
               {[
-                { icon: Phone, label: "Call Us", value: "+234 087 711 8036" },
-                { icon: Mail, label: "Email Us", value: "ozoaze@gmail.com" },
+                { icon: Phone, label: "Call Us", value: "+234 (0)807 718 036" },
+                { icon: Mail, label: "Email Us", value: "info@unoomaproperties.com" },
                 { icon: MapPin, label: "Visit Us", value: "No. 4, 4th Avenue, Gwarinpa Estate, Abuja FCT" },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">

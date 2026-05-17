@@ -3,34 +3,34 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const features = [
   {
-    icon: Search,
-    title: "Smart Property Search",
-    description: "Advanced filters by location, price, type, and amenities to find your ideal property fast.",
-  },
-  {
-    icon: MapPin,
-    title: "Virtual Tours & Maps",
-    description: "360° property walkthroughs and interactive maps so you can explore before visiting.",
-  },
-  {
-    icon: CreditCard,
-    title: "Secure Online Payments",
-    description: "Pay deposits and rent securely via Paystack & Flutterwave with full transaction tracking.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Direct Agent Chat",
-    description: "Connect instantly with verified agents via in-app messaging and WhatsApp integration.",
+    icon: Shield,
+    title: "Property Management",
+    description: "End-to-end management for residential, commercial and mixed-use properties — tenants, rent, maintenance and inspections.",
   },
   {
     icon: BarChart3,
-    title: "Market Insights",
-    description: "Real-time data on property values, neighborhood trends, and investment opportunities.",
+    title: "Real Estate Consulting",
+    description: "Investment guidance, market analysis, feasibility studies and documentation support for informed property decisions.",
   },
   {
-    icon: Shield,
-    title: "Verified Listings Only",
-    description: "Every property is verified by our team. Transparent pricing, honest reviews, no surprises.",
+    icon: Search,
+    title: "Property Buying & Selling",
+    description: "Verified listings, transparent transactions and professional negotiation across residential and commercial markets.",
+  },
+  {
+    icon: MapPin,
+    title: "Property Development",
+    description: "Quality residential, commercial and estate developments built for modern living and long-term investment value.",
+  },
+  {
+    icon: CreditCard,
+    title: "Investment Guidance",
+    description: "Strategic advice to help you identify profitable, secure real estate opportunities across Abuja and Nigeria.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Client-Focused Service",
+    description: "Dedicated consultants who listen, advise and tailor solutions — putting your goals at the centre of every step.",
   },
 ];
 

@@ -22,7 +22,7 @@ const Footer = () => {
               <span className="text-lg font-display font-bold text-on-dark">UNOOMA PROPERTIES</span>
             </div>
             <p className="text-sm font-sans leading-relaxed mb-5">
-              Property management, consultancy and development across Abuja FCT. Trusted partners in your real estate journey.
+              Property management, real estate consulting, buying & selling, and property development across Abuja and Nigeria.
             </p>
             <ul className="space-y-2.5 text-sm font-sans">
               <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 text-accent flex-shrink-0" /> {settings.address}</li>
