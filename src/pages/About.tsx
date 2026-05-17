@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import { Building2, Target, Eye, Heart } from "lucide-react";
@@ -16,6 +17,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="About UNOOMA Properties Ltd | Trusted Real Estate Company in Abuja"
+        description="Learn about UNOOMA Properties Ltd — a leading Abuja-based real estate company delivering property management, consulting, buying, selling and development across Nigeria."
+        path="/about"
+      />
       <Navbar />
 
       <section className="relative pt-28 pb-20 bg-gradient-navy text-on-dark overflow-hidden">
