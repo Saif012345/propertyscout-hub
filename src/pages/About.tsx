@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
+import { brandSchemas } from "@/lib/seoSchemas";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import { Building2, Target, Eye, Heart } from "lucide-react";
@@ -21,6 +22,7 @@ const About = () => {
         title="About UNOOMA Properties Ltd | Trusted Real Estate Company in Abuja"
         description="Learn about UNOOMA Properties Ltd — a leading Abuja-based real estate company delivering property management, consulting, buying, selling and development across Nigeria."
         path="/about"
+        jsonLd={brandSchemas}
       />
       <Navbar />
 
