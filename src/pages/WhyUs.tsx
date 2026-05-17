@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import Seo from "@/components/Seo";
 import Footer from "@/components/Footer";
 import FeaturesSection from "@/components/FeaturesSection";
 import CTASection from "@/components/CTASection";
@@ -26,6 +27,11 @@ const WhyUs = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Why Choose UNOOMA Properties Ltd | Trusted Real Estate Experts in Abuja"
+        description="Integrity, market expertise and reliable service — discover why clients across Abuja and Nigeria choose UNOOMA Properties Ltd for real estate management, consultancy and development."
+        path="/why-us"
+      />
       <Navbar />
 
       <section className="pt-28 pb-16 bg-gradient-navy text-on-dark">
