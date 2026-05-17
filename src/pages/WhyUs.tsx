@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
+import { brandSchemas } from "@/lib/seoSchemas";
 import Footer from "@/components/Footer";
 import FeaturesSection from "@/components/FeaturesSection";
 import CTASection from "@/components/CTASection";
@@ -31,6 +32,7 @@ const WhyUs = () => {
         title="Why Choose UNOOMA Properties Ltd | Trusted Real Estate Experts in Abuja"
         description="Integrity, market expertise and reliable service — discover why clients across Abuja and Nigeria choose UNOOMA Properties Ltd for real estate management, consultancy and development."
         path="/why-us"
+        jsonLd={brandSchemas}
       />
       <Navbar />
 

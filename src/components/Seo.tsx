@@ -7,11 +7,13 @@ interface SeoProps {
   description: string;
   path: string;
   image?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const Seo = ({ title, description, path, image }: SeoProps) => {
+const Seo = ({ title, description, path, image, jsonLd }: SeoProps) => {
   const url = `${SITE}${path}`;
   const ogImage = image ?? `${SITE}/logo.png`;
+  const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
   return (
     <Helmet>
       <title>{title}</title>
@@ -26,6 +28,11 @@ const Seo = ({ title, description, path, image }: SeoProps) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+      {schemas.map((schema, i) => (
+        <script key={i} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
     </Helmet>
   );
 };

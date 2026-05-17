@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
+import { brandSchemas } from "@/lib/seoSchemas";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
@@ -11,6 +12,7 @@ const Contact = () => {
         title="Contact UNOOMA Properties Ltd | Real Estate Office in Gwarinpa, Abuja"
         description="Get in touch with UNOOMA Properties Ltd at No. 4, 4th Avenue, Gwarinpa Estate, Abuja. Call +234 (0)807 718 036 or email info@unoomaproperties.com for property enquiries."
         path="/contact"
+        jsonLd={brandSchemas}
       />
       <Navbar />
 
