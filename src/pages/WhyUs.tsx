@@ -6,12 +6,12 @@ import { ShieldCheck, Award, Users, Clock, TrendingUp, HandshakeIcon } from "luc
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const reasons = [
-  { icon: ShieldCheck, title: "Verified & Licensed", body: "A fully registered Nigerian real estate firm with verified property records and transparent documentation on every transaction." },
-  { icon: Award, title: "Local Expertise", body: "Deep knowledge of Abuja's neighborhoods — from Gwarinpa to Maitama — ensures you get the right property at the right price." },
-  { icon: Users, title: "Client-First Approach", body: "Every client gets a dedicated consultant. We listen, advise and tailor solutions to your goals — not a sales script." },
-  { icon: Clock, title: "Fast & Reliable", body: "Quick response times, efficient processes and clear communication keep your property dealings on track." },
-  { icon: TrendingUp, title: "Investment Insight", body: "We don't just sell properties — we help you grow wealth with data-backed market and rental yield analysis." },
-  { icon: HandshakeIcon, title: "Long-Term Partnership", body: "From your first rental to your tenth investment property — we're with you for the whole journey." },
+  { icon: ShieldCheck, title: "Integrity", body: "We uphold honesty, accountability and professionalism in every transaction we handle." },
+  { icon: Award, title: "Excellence", body: "Committed to delivering high-quality services and exceptional client experiences across every project." },
+  { icon: Users, title: "Customer Satisfaction", body: "Our clients remain at the centre of everything we do — tailored advice, dedicated consultants." },
+  { icon: Clock, title: "Reliable & Responsive", body: "Quick response times, efficient processes and transparent communication on every engagement." },
+  { icon: TrendingUp, title: "Market Expertise", body: "Strong knowledge of Abuja's real estate market and Nigeria's wider property sector for smart decisions." },
+  { icon: HandshakeIcon, title: "Innovation", body: "We embrace modern solutions and creative strategies in real estate service delivery and development." },
 ];
 
 const stats = [

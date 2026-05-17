@@ -25,12 +25,13 @@ const About = () => {
         <div className="container mx-auto px-6 relative z-10">
           <span className="text-accent font-sans text-sm font-semibold tracking-widest uppercase">About Us</span>
           <h1 className="text-4xl md:text-6xl font-display font-bold mt-4 mb-6 max-w-3xl">
-            Building Abuja's Future, <span className="text-gradient-gold">One Property at a Time</span>
+            Your Trusted Real Estate <span className="text-gradient-gold">Partner</span> in Abuja
           </h1>
           <p className="text-on-dark/70 font-sans text-lg max-w-2xl">
-            UNOOMA Properties Ltd is a full-service real estate company headquartered in 
-            Gwarinpa Estate, Abuja FCT, providing property management, consultancy and 
-            development services to discerning clients across Nigeria.
+            Unooma Properties Ltd is a leading real estate company based in Abuja, providing
+            professional property management, real estate consulting, property buying & selling,
+            and property development — reliable, transparent and innovative solutions for
+            individuals, families, businesses and investors.
           </p>
         </div>
       </section>
@@ -39,14 +40,14 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className={`grid lg:grid-cols-2 gap-16 items-center mb-24 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <div>
-              <span className="text-accent font-sans text-sm font-semibold tracking-widest uppercase">Our Story</span>
+              <span className="text-accent font-sans text-sm font-semibold tracking-widest uppercase">Who We Are</span>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mt-4 mb-6">
-                A trusted name in <span className="text-gradient-gold">Abuja real estate</span>
+                More than buying and selling — <span className="text-gradient-gold">building value</span>
               </h2>
               <div className="space-y-4 text-muted-foreground font-sans leading-relaxed">
-                <p>Founded with a clear purpose — to bring professionalism, transparency and quality to the Nigerian real estate market — UNOOMA Properties Ltd has grown into a trusted partner for property owners, tenants and investors throughout the FCT.</p>
-                <p>From managing residential portfolios in Gwarinpa, Maitama and Asokoro, to advising clients on commercial acquisitions and overseeing development projects, our team combines local expertise with global standards of service.</p>
-                <p>We believe real estate is more than transactions — it's about long-term relationships, secure investments and the homes and spaces where lives unfold.</p>
+                <p>At Unooma Properties Ltd, we believe real estate is about building value, creating opportunities and helping clients secure their future. Our team delivers strategic property solutions tailored to the unique needs of every client.</p>
+                <p>Whether you are looking to buy a home, sell a property, manage an estate, or invest in real estate development, we provide the expertise and support needed to make every transaction seamless and rewarding.</p>
+                <p>With deep knowledge of the Abuja property market and Nigeria's growing real estate sector, we combine professionalism, integrity and market expertise to deliver lasting value.</p>
               </div>
             </div>
             <div className="relative">
@@ -81,11 +82,12 @@ const About = () => {
               Three pillars of our <span className="text-gradient-gold">real estate practice</span>
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
-              { title: "Property Management", body: "We manage residential and commercial portfolios — handling tenants, maintenance, rent collection and reporting on your behalf." },
-              { title: "Property Consultancy", body: "Strategic advice on acquisitions, valuations, investment decisions and market positioning across the FCT." },
-              { title: "Property Development", body: "From land sourcing to project delivery — we develop quality residential and mixed-use properties in prime Abuja locations." },
+              { title: "Property Management", body: "Tenant management, rent collection, facility & maintenance supervision, estate management, inspections and occupancy management." },
+              { title: "Real Estate Consulting", body: "Real estate advisory, investment guidance, market analysis, feasibility studies, documentation support and development planning." },
+              { title: "Property Buying & Selling", body: "Verified listings, transparent transactions, professional negotiation, proper documentation and secure acquisition processes." },
+              { title: "Property Development", body: "Residential, commercial and estate developments — modern housing solutions and investment-driven projects." },
             ].map((s) => (
               <div key={s.title} className="bg-card rounded-xl p-8 border border-border">
                 <Building2 className="w-8 h-8 text-accent mb-4" />

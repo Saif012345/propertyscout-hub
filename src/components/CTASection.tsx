@@ -14,12 +14,12 @@ const CTASection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className={`max-w-3xl mx-auto text-center transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-            Ready to Find Your{" "}
-            <span className="text-gradient-gold">Next Property?</span>
+            Building Value Through{" "}
+            <span className="text-gradient-gold">Real Estate</span>
           </h2>
           <p className="text-on-dark/60 font-sans text-lg mb-10 max-w-xl mx-auto">
-            Join hundreds of clients who trust UNOOMA Properties for their real estate 
-            needs in Abuja. Speak to a consultant today — no obligations.
+            Whether you are buying, selling, investing or developing, Unooma Properties Ltd
+            is your trusted partner for dependable real estate solutions in Abuja and across Nigeria.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

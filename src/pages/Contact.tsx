@@ -26,8 +26,8 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
               { icon: MapPin, title: "Office", lines: ["No. 4, 4th Avenue", "Gwarinpa Estate", "Abuja FCT, Nigeria"] },
-              { icon: Phone, title: "Phone", lines: ["+234 087 711 8036", "Mon – Sat"] },
-              { icon: Mail, title: "Email", lines: ["ozoaze@gmail.com", "We reply within 24h"] },
+              { icon: Phone, title: "Phone", lines: ["+234 (0)807 718 036", "Mon – Sat"] },
+              { icon: Mail, title: "Email", lines: ["info@unoomaproperties.com", "We reply within 24h"] },
               { icon: Clock, title: "Hours", lines: ["Mon – Fri: 9am – 6pm", "Sat: 10am – 3pm"] },
             ].map((item) => (
               <div key={item.title} className="text-center md:text-left">

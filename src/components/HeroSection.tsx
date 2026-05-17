@@ -22,14 +22,15 @@ const HeroSection = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-on-dark leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            Property Made{" "}
-            <span className="text-gradient-gold">Effortless</span>{" "}
+            Your Trusted Real Estate{" "}
+            <span className="text-gradient-gold">Partner</span>{" "}
             in Abuja
           </h1>
 
           <p className="text-lg md:text-xl text-on-dark/70 font-sans leading-relaxed mb-10 max-w-2xl animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-            UNOOMA Properties Ltd offers expert property management, consultancy, and 
-            development services across the FCT. Find, lease, or develop with confidence.
+            Unooma Properties Ltd delivers professional property management, real estate
+            consulting, buying & selling, and property development — reliable, transparent
+            solutions for individuals, families, businesses and investors.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
