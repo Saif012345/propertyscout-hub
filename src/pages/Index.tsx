@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Seo from "@/components/Seo";
+import { brandSchemas } from "@/lib/seoSchemas";
 import HeroSection from "@/components/HeroSection";
 import CategoriesSection from "@/components/CategoriesSection";
 import FeaturedProperties from "@/components/FeaturedProperties";
@@ -15,6 +16,7 @@ const Index = () => {
         title="UNOOMA Properties Ltd | Real Estate, Management & Consultancy in Abuja"
         description="UNOOMA Properties Ltd — your trusted real estate partner in Abuja. Property management, consultancy, buying, selling and development across the FCT, Nigeria."
         path="/"
+        jsonLd={brandSchemas}
       />
       <Navbar />
       <HeroSection />
