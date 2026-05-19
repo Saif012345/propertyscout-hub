@@ -13,13 +13,13 @@ const Footer = () => {
   ].filter((s) => s.url && s.url.trim().length > 0);
 
   return (
-    <footer className="bg-navy-dark text-on-dark/60 py-16">
+    <footer className="bg-background text-muted-foreground border-t border-border py-16">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img src="/logo.png" alt="UNOOMA Properties logo" className="w-7 h-7 object-contain" width={28} height={28} loading="lazy" />
-              <span className="text-lg font-display font-bold text-on-dark">UNOOMA PROPERTIES</span>
+            <div className="flex flex-col leading-none mb-4">
+              <span className="text-lg font-display font-bold text-foreground">UNOOMA<span className="text-accent">.</span></span>
+              <span className="text-[10px] font-sans font-semibold tracking-[0.25em] text-muted-foreground uppercase mt-1">Properties</span>
             </div>
             <p className="text-sm font-sans leading-relaxed mb-5">
               Property management, real estate consulting, buying & selling, and property development across Abuja and Nigeria.
@@ -33,7 +33,7 @@ const Footer = () => {
               <div className="flex items-center gap-3 mt-5">
                 {socials.map(({ url, Icon, label }) => (
                   <a key={label} href={url} target="_blank" rel="noopener noreferrer" aria-label={label}
-                     className="w-9 h-9 rounded-full border border-on-dark/15 flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
+                     className="w-9 h-9 rounded-full border border-border flex items-center justify-center hover:border-accent hover:text-accent transition-colors">
                     <Icon className="w-4 h-4" />
                   </a>
                 ))}
@@ -47,7 +47,7 @@ const Footer = () => {
             { title: "Company", links: [{ label: "About Us", href: "/about" }, { label: "Why Us", href: "/why-us" }, { label: "Contact", href: "/contact" }] },
           ].map((col) => (
             <div key={col.title}>
-              <h4 className="font-sans font-semibold text-on-dark text-sm mb-4">{col.title}</h4>
+              <h4 className="font-sans font-semibold text-foreground text-sm mb-4">{col.title}</h4>
               <ul className="space-y-2">
                 {col.links.map((link) => (
                   <li key={link.label}>
@@ -61,7 +61,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="border-t border-on-dark/10 pt-8 text-center text-xs font-sans">
+        <div className="border-t border-border pt-8 text-center text-xs font-sans">
           © 2026 UNOOMA PROPERTIES LTD. All rights reserved.
         </div>
       </div>
