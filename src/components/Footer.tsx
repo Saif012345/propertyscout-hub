@@ -18,8 +18,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div>
             <div className="flex flex-col leading-none mb-4">
-              <span className="text-lg font-display font-bold text-foreground">UNOOMA<span className="text-accent">.</span></span>
-              <span className="text-[10px] font-sans font-semibold tracking-[0.25em] text-muted-foreground uppercase mt-1">Properties</span>
+              <span className="text-lg font-display font-bold text-accent">UNOOMA<span>.</span></span>
+              <span className="text-[10px] font-sans font-semibold tracking-[0.25em] text-accent uppercase mt-1">Properties</span>
             </div>
             <p className="text-sm font-sans leading-relaxed mb-5">
               Property management, real estate consulting, buying & selling, and property development across Abuja and Nigeria.
