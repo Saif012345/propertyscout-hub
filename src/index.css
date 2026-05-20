@@ -24,7 +24,7 @@
     --muted: 215 20% 94%;
     --muted-foreground: 215 15% 48%;
 
-    --accent: 158 64% 38%;
+    --accent: 0 75% 45%;
     --accent-foreground: 40 30% 97%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,13 +32,13 @@
 
     --border: 215 20% 90%;
     --input: 215 20% 90%;
-    --ring: 158 64% 38%;
+    --ring: 0 75% 45%;
 
     --radius: 0.625rem;
 
-    --gold: 158 64% 38%;
-    --gold-light: 158 55% 52%;
-    --gold-dark: 162 70% 24%;
+    --gold: 0 75% 45%;
+    --gold-light: 0 80% 58%;
+    --gold-dark: 0 70% 32%;
     --navy: 220 45% 16%;
     --navy-light: 218 35% 28%;
     --navy-dark: 222 50% 10%;
