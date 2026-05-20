@@ -20,10 +20,10 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="flex flex-col leading-none">
-          <span className="text-xl font-display font-bold text-foreground tracking-tight">
-            UNOOMA<span className="text-accent">.</span>
+          <span className="text-xl font-display font-bold text-accent tracking-tight">
+            UNOOMA<span>.</span>
           </span>
-          <span className="text-[10px] font-sans font-semibold tracking-[0.25em] text-muted-foreground uppercase mt-0.5">
+          <span className="text-[10px] font-sans font-semibold tracking-[0.25em] text-accent uppercase mt-0.5">
             Properties
           </span>
         </Link>
