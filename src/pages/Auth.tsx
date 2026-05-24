@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { Building2, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { z } from "zod";
 
 const schema = z.object({
