@@ -67,10 +67,10 @@ const Auth = () => {
           <ArrowLeft className="w-4 h-4" /> Back to site
         </Link>
         <div className="bg-card text-card-foreground rounded-2xl shadow-2xl p-8 border border-border">
-          <div className="flex items-center gap-2 mb-6">
-            <Building2 className="w-6 h-6 text-accent" />
-            <span className="text-xl font-display font-bold">UNOOMA<span className="text-accent">.</span></span>
-          </div>
+          <Link to="/" className="flex flex-col leading-none mb-6">
+            <span className="text-xl font-display font-bold text-accent tracking-tight">UNOOMA<span>.</span></span>
+            <span className="text-[10px] font-sans font-semibold tracking-[0.25em] text-accent uppercase mt-0.5">Properties</span>
+          </Link>
           <h1 className="text-2xl font-display font-bold mb-1">
             {mode === "signin" ? "Sign in" : "Create account"}
           </h1>
