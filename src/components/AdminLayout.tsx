@@ -75,8 +75,8 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
           <Menu className="w-5 h-5" />
         </button>
         <Link to="/admin" className="flex flex-col leading-none items-center">
-          <span className="font-display font-bold text-foreground text-sm">UNOOMA<span className="text-accent">.</span></span>
-          <span className="text-[9px] font-sans font-semibold tracking-[0.25em] text-muted-foreground uppercase">Admin</span>
+          <span className="font-display font-bold text-accent text-sm tracking-tight">UNOOMA<span>.</span></span>
+          <span className="text-[9px] font-sans font-semibold tracking-[0.25em] text-accent uppercase">Admin</span>
         </Link>
         <Button variant="outline" size="sm" onClick={handleSignOut}>
           <LogOut className="w-4 h-4" />
