@@ -26,8 +26,8 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
     <aside className="w-64 h-full bg-card border-r border-border flex flex-col">
       <div className="p-6 border-b border-border flex items-center justify-between">
         <Link to="/" className="flex flex-col leading-none">
-          <span className="font-display font-bold text-foreground">UNOOMA<span className="text-accent">.</span></span>
-          <span className="text-[10px] font-sans font-semibold tracking-[0.25em] text-muted-foreground uppercase mt-0.5">Properties Admin</span>
+          <span className="font-display font-bold text-accent tracking-tight">UNOOMA<span>.</span></span>
+          <span className="text-[10px] font-sans font-semibold tracking-[0.25em] text-accent uppercase mt-0.5">Properties Admin</span>
         </Link>
         <button className="md:hidden text-foreground" onClick={() => setOpen(false)} aria-label="Close menu">
           <X className="w-5 h-5" />
