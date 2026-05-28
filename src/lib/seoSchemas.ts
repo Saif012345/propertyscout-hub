@@ -10,7 +10,7 @@ const baseAddress = {
 
 const baseContact = {
   "@type": "ContactPoint",
-  telephone: "+234-807-718-036",
+  telephone: "+234-807-711-8036",
   email: "info@unoomaproperties.com",
   contactType: "customer service",
   areaServed: "NG",
@@ -26,7 +26,7 @@ export const localBusinessSchema = {
   name: "UNOOMA Properties Ltd",
   image: `${SITE}/logo.png`,
   url: SITE,
-  telephone: "+234-807-718-036",
+  telephone: "+234-807-711-8036",
   email: "info@unoomaproperties.com",
   address: baseAddress,
   priceRange: "$$",
@@ -58,7 +58,7 @@ export const realEstateAgentSchema = {
   image: `${SITE}/logo.png`,
   logo: `${SITE}/logo.png`,
   url: SITE,
-  telephone: "+234-807-718-036",
+  telephone: "+234-807-711-8036",
   email: "info@unoomaproperties.com",
   address: baseAddress,
   contactPoint: baseContact,

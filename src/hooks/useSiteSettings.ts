@@ -13,8 +13,8 @@ export type SiteSettings = {
 };
 
 const DEFAULTS: SiteSettings = {
-  phone: "+234 087 711 8036",
-  email: "ozoaze@gmail.com",
+  phone: "08077118036",
+  email: "info@unoomaproperties.com",
   address: "No. 4, 4th Avenue, Gwarinpa Estate, Abuja FCT",
   facebook_url: "",
   instagram_url: "",

@@ -83,7 +83,7 @@ const ContactSection = () => {
 
             <div className="space-y-6">
               {[
-                { icon: Phone, label: "Call Us", value: "+234 (0)807 718 036" },
+                { icon: Phone, label: "Call Us", value: "08077118036" },
                 { icon: Mail, label: "Email Us", value: "info@unoomaproperties.com" },
                 { icon: MapPin, label: "Visit Us", value: "No. 4, 4th Avenue, Gwarinpa Estate, Abuja FCT" },
               ].map((item) => (
