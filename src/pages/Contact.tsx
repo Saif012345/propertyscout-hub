@@ -10,7 +10,7 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Seo
         title="Contact UNOOMA Properties Ltd | Real Estate Office in Gwarinpa, Abuja"
-        description="Get in touch with UNOOMA Properties Ltd at No. 4, 4th Avenue, Gwarinpa Estate, Abuja. Call +234 (0)807 718 036 or email info@unoomaproperties.com for property enquiries."
+        description="Get in touch with UNOOMA Properties Ltd at No. 4, 4th Avenue, Gwarinpa Estate, Abuja. Call 08077118036 or email info@unoomaproperties.com for property enquiries."
         path="/contact"
         jsonLd={brandSchemas}
       />
@@ -34,7 +34,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
               { icon: MapPin, title: "Office", lines: ["No. 4, 4th Avenue", "Gwarinpa Estate", "Abuja FCT, Nigeria"] },
-              { icon: Phone, title: "Phone", lines: ["+234 (0)807 718 036", "Mon – Sat"] },
+              { icon: Phone, title: "Phone", lines: ["08077118036", "Mon – Sat"] },
               { icon: Mail, title: "Email", lines: ["info@unoomaproperties.com", "We reply within 24h"] },
               { icon: Clock, title: "Hours", lines: ["Mon – Fri: 9am – 6pm", "Sat: 10am – 3pm"] },
             ].map((item) => (

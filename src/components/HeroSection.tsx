@@ -50,9 +50,9 @@ const HeroSection = () => {
 
           <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-12 sm:mt-16 pt-8 border-t border-on-dark/10 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
             {[
-              { value: "500+", label: "Properties Managed" },
-              { value: "1,200+", label: "Satisfied Clients" },
-              { value: "15+", label: "Years in Abuja" },
+              { value: "8", label: "Properties Under Management" },
+              { value: "300+", label: "Satisfied Clients & Customers" },
+              { value: "15", label: "Years in Business" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-accent">{stat.value}</div>

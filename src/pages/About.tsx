@@ -44,6 +44,23 @@ const About = () => {
         </div>
       </section>
 
+      <section className="py-20 bg-background border-b border-border">
+        <div className="container mx-auto px-6 max-w-4xl mx-auto text-center">
+          <p className="text-lg md:text-xl text-muted-foreground font-sans leading-relaxed">
+            Welcome to <span className="text-accent font-semibold">Unooma Properties Ltd</span> — your trusted real estate company in Nigeria.
+          </p>
+          <p className="text-muted-foreground font-sans leading-relaxed mt-4">
+            With deep knowledge of the Abuja property market and Nigeria's evolving real estate landscape, Unooma Properties Ltd has built a reputation for reliability, integrity, and excellence in service delivery. The company combines industry expertise with a client-focused approach to help clients buy, sell, manage, and develop properties with confidence.
+          </p>
+          <p className="text-muted-foreground font-sans leading-relaxed mt-4">
+            Located in Abuja, one of Nigeria's fastest-growing real estate hubs, Unooma Properties Ltd continues to position itself as a trusted partner for clients seeking secure investments, efficient property management, and strategic real estate opportunities.
+          </p>
+          <p className="text-muted-foreground font-sans leading-relaxed mt-4">
+            Through innovation, professionalism, and a commitment to excellence, Unooma Properties Ltd is helping shape the future of real estate development and property services in Nigeria.
+          </p>
+        </div>
+      </section>
+
       <section className="py-24 bg-background" ref={ref}>
         <div className="container mx-auto px-6">
           <div className={`grid lg:grid-cols-2 gap-16 items-center mb-24 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
@@ -87,7 +104,7 @@ const About = () => {
           <div className="text-center mb-12">
             <span className="text-accent font-sans text-sm font-semibold tracking-widest uppercase">What We Do</span>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mt-4">
-              Three pillars of our <span className="text-gradient-gold">real estate practice</span>
+              Four pillars of our <span className="text-gradient-gold">real estate practice</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
