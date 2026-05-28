@@ -42,7 +42,7 @@ const CategoriesSection = () => {
             What Are You <span className="text-gradient-gold">Looking For?</span>
           </h2>
           <p className="text-muted-foreground font-sans text-lg">
-            From luxury homes to commercial spaces, find exactly what you need in Abuja.
+            From vacant land to luxury homes, find exactly what you need in Abuja.
           </p>
         </div>
 
